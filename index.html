@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nova Quiz And Trivia Challenge</title>
+
+  <meta name="description" content="Nova Quiz is a premium trivia experience with 1000+ questions, team battles, offline play, and a sleek midnight design. Play anywhere, anytime.">
+
+  <!-- SEO -->
+  <meta name="keywords" content="trivia app, quiz game, offline quiz, team trivia, general knowledge, Nova Quiz">
+  <meta name="author" content="NOVASTORE (PTY) LTD">
+
+  <style>
+    :root {
+      --bg: #020817;
+      --bg-deep: #001233;
+      --text: #eef5ff;
+      --muted: #8ea7c9;
+      --cyan: #20d9ff;
+      --cyan-2: #7cebff;
+      --violet: #b16dff;
+      --border: rgba(255,255,255,0.09);
+      --shadow: 0 24px 60px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(32,217,255,0.12), transparent 25%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 42px;
+      border-radius: 10px;
+    }
+
+    .brand h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    nav a {
+      margin-left: 16px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+      color: #001120;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 20px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <img src="/NovaWorkout.png" alt="Nova Quiz logo">
+      <h1>Nova Quiz</h1>
+    </div>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms-of-service.html">Terms</a>
+      <a href="/delete-account.html">Delete Account</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Nova Quiz & Trivia Challenge</h2>
+    <p>
+      1000+ questions. 20+ categories. Offline ready.  
+      Challenge yourself or battle your friends anywhere.
+    </p>
+
+    <a class="btn" href="#">Download Now</a>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="grid">
+
+      <div class="card">
+        <h3>Play Anywhere</h3>
+        <p>No signal? No problem. Download question packs and play fully offline.</p>
+      </div>
+
+      <div class="card">
+        <h3>Team Battle Mode</h3>
+        <p>Create teams, compete, and bring the energy to every quiz session.</p>
+      </div>
+
+      <div class="card">
+        <h3>1000+ Questions</h3>
+        <p>Explore a massive database across 20+ categories and growing.</p>
+      </div>
+
+      <div class="card">
+        <h3>Live Updates</h3>
+        <p>Fresh trivia synced automatically when you're online.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section class="section">
+    <div class="grid">
+
+      <div class="card">
+        <h3>Built for Speed</h3>
+        <p>Powered by Flutter for smooth, fast gameplay.</p>
+      </div>
+
+      <div class="card">
+        <h3>Offline Engine</h3>
+        <p>SQLite database ensures instant loading and zero lag.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cloud Sync</h3>
+        <p>Firebase keeps your questions updated and evolving.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align:center;">
+    <h2>Ready to test your knowledge?</h2>
+    <p style="color:var(--muted);">Download Nova Quiz and start playing now.</p>
+    <a class="btn" href="#">Get the App</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 NOVASTORE (PTY) LTD  
+  </footer>
+
+</div>
+
+</body>
+</html>
