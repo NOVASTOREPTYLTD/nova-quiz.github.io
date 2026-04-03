@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nova Quiz | Delete Account</title>
+  <meta name="description" content="How to delete your Nova Quiz And Trivia Challenge account and associated data.">
+
+  <style>
+    :root {
+      --bg: #020817;
+      --bg-deep: #001233;
+      --surface: rgba(255,255,255,0.04);
+      --surface-strong: rgba(255,255,255,0.06);
+      --surface-soft: rgba(255,255,255,0.03);
+      --text: #eef5ff;
+      --muted: #8ea7c9;
+      --muted-2: #6f88aa;
+      --cyan: #20d9ff;
+      --cyan-2: #7cebff;
+      --amber: #ffb55e;
+      --danger: #ff7a7a;
+      --border: rgba(255,255,255,0.09);
+      --shadow: 0 24px 60px rgba(0,0,0,0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(32,217,255,0.12), transparent 22%),
+        radial-gradient(circle at 15% 20%, rgba(255,122,122,0.06), transparent 16%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--cyan-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(4,18,43,0.92);
+      border-bottom: 1px solid rgba(32,217,255,0.14);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.18s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .page-hero {
+      padding: 54px 0 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--danger);
+      background: rgba(255,122,122,0.08);
+      border: 1px solid rgba(255,122,122,0.18);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--danger);
+      box-shadow: 0 0 14px rgba(255,122,122,0.75);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 52px;
+      line-height: 0.98;
+      letter-spacing: -1.8px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .meta-pill {
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .page-wrap {
+      padding: 16px 0 56px;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 98px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .sidebar-title {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .sidebar-nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .sidebar-nav a:hover {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .content-card {
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .callout {
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 22px;
+      background: rgba(255,122,122,0.06);
+      border: 1px solid rgba(255,122,122,0.14);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .policy-section {
+      padding: 22px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .policy-section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: -0.7px;
+    }
+
+    p, li {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul, ol {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .info-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .info-label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(32,217,255,0.1);
+      border: 1px solid rgba(32,217,255,0.16);
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .step p {
+      margin: 0;
+    }
+
+    .site-footer {
+      padding: 24px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .page-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 40px;
+        letter-spacing: -1.3px;
+      }
+
+      .content-card {
+        padding: 22px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page-hero {
+        padding-top: 42px;
+      }
+
+      .hero-copy,
+      p, li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-wrap" href="/">
+        <img class="brand-logo" src="/NovaWorkout.png" alt="Nova Quiz logo">
+        <div class="brand-text">
+          <div class="brand-name">Nova Quiz</div>
+          <div class="brand-sub">Trivia challenge</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <a href="/delete-account.html">Delete Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Account and data deletion
+        </div>
+
+        <h1>Delete Account and Data</h1>
+
+        <p class="hero-copy">
+          This page explains how to delete your Nova Quiz And Trivia Challenge
+          account and the associated data linked to it.
+        </p>
+
+        <div class="meta-row">
+          <div class="meta-pill">Last updated: 2026-04-03</div>
+          <div class="meta-pill">Operator: NOVASTORE (PTY) LTD</div>
+          <div class="meta-pill">Support: support@novastore.co.za</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-wrap">
+      <div class="container page-grid">
+        <aside class="sidebar">
+          <div class="sidebar-title">On this page</div>
+          <nav class="sidebar-nav">
+            <a href="#overview">Overview</a>
+            <a href="#guest">Guest mode data</a>
+            <a href="#account">Signed-in account deletion</a>
+            <a href="#email">Request by email</a>
+            <a href="#deleted">What gets deleted</a>
+            <a href="#retained">What may be retained</a>
+            <a href="#timing">Processing and retention timing</a>
+            <a href="#help">Need help?</a>
+          </nav>
+        </aside>
+
+        <div class="content-card">
+          <section id="overview" class="policy-section">
+            <h2>Overview</h2>
+            <div class="callout">
+              <strong>Important</strong>
+              Nova Quiz supports both guest mode and signed-in play. The steps
+              and results are different depending on whether your data is stored
+              only on your device or linked to a signed-in account.
+            </div>
+
+            <p>
+              If you use Nova Quiz as a guest, most of your data is stored
+              locally on your device. If you sign in with Google Play, some of
+              your account, gameplay, and purchase-related data may be stored in
+              Firebase or related backend systems so we can support cloud sync,
+              account continuity, and payment-related features.
+            </p>
+          </section>
+
+          <section id="guest" class="policy-section">
+            <h2>Guest mode data</h2>
+            <p>
+              In guest mode, your gameplay data is generally stored locally on
+              your device. This may include quiz history, selected categories,
+              team setup details, downloaded offline packs, local stats, and app
+              preferences.
+            </p>
+
+            <p>
+              To remove guest mode data, you can usually do one of the following:
+            </p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                  <p>
+                    Use any in-app reset, clear data, or delete local progress
+                    option if available in Nova Quiz settings.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                  <p>
+                    Clear the app's storage from your device settings. The exact
+                    steps depend on your device and operating system version.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                  <p>
+                    Uninstall the app. This may remove local app data stored on
+                    the device, subject to your platform's behavior.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              Because guest mode data is local, we may not be able to delete it
+              remotely for you if it was never linked to an account on our
+              systems.
+            </p>
+          </section>
+
+          <section id="account" class="policy-section">
+            <h2>Signed-in account deletion</h2>
+            <p>
+              If you signed in with Google Play, you may request deletion of the
+              account-linked data associated with your Nova Quiz profile.
+            </p>
+
+            <p>
+              This process is intended to remove or de-identify data associated
+              with your signed-in account from our active systems, subject to
+              legal, security, accounting, fraud-prevention, and operational
+              retention requirements.
+            </p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                  <p>
+                    Identify the email address or account used to sign in to
+                    Nova Quiz.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                  <p>
+                    Send a deletion request to
+                    <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>
+                    using the subject line:
+                    <strong>Delete Nova Quiz account</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                  <p>
+                    Include enough information for us to identify your account,
+                    such as your sign-in email address, display name, and any
+                    relevant support details.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">4</div>
+                <div>
+                  <p>
+                    We may need to verify that you are the account owner before
+                    processing the deletion request.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="email" class="policy-section">
+            <h2>Request by email</h2>
+            <p>
+              You can request deletion of account-linked Nova Quiz data by
+              emailing:
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-label">Support email</div>
+                <div class="info-value">
+                  <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-label">Suggested subject</div>
+                <div class="info-value">Delete Nova Quiz account</div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-label">Operator</div>
+                <div class="info-value">NOVASTORE (PTY) LTD</div>
+              </div>
+            </div>
+
+            <p>
+              To help us process your request faster, include the email address
+              used for sign-in and a short description confirming that you want
+              your account-linked data deleted.
+            </p>
+          </section>
+
+          <section id="deleted" class="policy-section">
+            <h2>What gets deleted</h2>
+            <p>
+              Depending on how you used the app, deletion may include:
+            </p>
+            <ul>
+              <li>Signed-in account profile records</li>
+              <li>Cloud-synced quiz history and gameplay stats</li>
+              <li>Stored preferences linked to your account</li>
+              <li>Team or gameplay records associated with your signed-in profile</li>
+              <li>Question suggestions or support-linked records that can reasonably be tied to your account</li>
+            </ul>
+
+            <p>
+              For guest mode, deletion usually means removing local device data,
+              such as:
+            </p>
+            <ul>
+              <li>Local quiz progress and history</li>
+              <li>Offline downloaded packs</li>
+              <li>Saved local settings and preferences</li>
+              <li>Locally stored stats and team setup data</li>
+            </ul>
+          </section>
+
+          <section id="retained" class="policy-section">
+            <h2>What may be retained</h2>
+            <p>
+              Even after a deletion request, we may retain limited information
+              where necessary for legitimate purposes, including:
+            </p>
+            <ul>
+              <li>Transaction or purchase validation records</li>
+              <li>Fraud-prevention and security records</li>
+              <li>Legal, tax, accounting, or compliance records</li>
+              <li>Backup data for a limited retention period</li>
+              <li>Aggregated or de-identified analytics that no longer reasonably identify you</li>
+            </ul>
+          </section>
+
+          <section id="timing" class="policy-section">
+            <h2>Processing and retention timing</h2>
+            <p>
+              We aim to review deletion requests within a reasonable time.
+              Actual completion time may vary depending on verification needs,
+              system limitations, legal obligations, and whether your data is
+              stored locally, in cloud systems, or both.
+            </p>
+
+            <p>
+              Some backup copies or security logs may remain for a limited
+              period before being overwritten or deleted in the normal course of
+              operations.
+            </p>
+          </section>
+
+          <section id="help" class="policy-section">
+            <h2>Need help?</h2>
+            <p>
+              If you need help deleting your Nova Quiz account or understanding
+              whether your data is stored locally or in the cloud, contact us at
+              <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>.
+            </p>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-label">Company</div>
+                <div class="info-value">NOVASTORE (PTY) LTD</div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-label">App</div>
+                <div class="info-value">Nova Quiz And Trivia Challenge</div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-label">Email</div>
+                <div class="info-value">
+                  <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <a href="/delete-account.html">Delete Account</a>
+      </div>
+
+      <div class="footer-copy">
+        © 2026 NOVASTORE (PTY) LTD. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
