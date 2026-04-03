@@ -31,32 +31,19 @@
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top right, rgba(32,217,255,0.12), transparent 22%),
-        radial-gradient(circle at 15% 20%, rgba(255,181,94,0.05), transparent 16%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
-      min-height: 100vh;
     }
 
-    a {
-      color: var(--cyan-2);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--cyan-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .container {
-      width: 100%;
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 20px;
@@ -65,702 +52,154 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
       background: rgba(4,18,43,0.92);
       border-bottom: 1px solid rgba(32,217,255,0.14);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
     }
 
     .header-inner {
-      min-height: 78px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
       padding: 16px 0;
     }
 
     .brand-wrap {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 12px;
-      color: var(--text);
-      flex: 0 0 auto;
+      gap: 10px;
     }
 
     .brand-logo {
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      max-width: 44px;
-      object-fit: cover;
-      display: block;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.28);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-name {
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      line-height: 1.1;
-    }
-
-    .brand-sub {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      line-height: 1.1;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
     }
 
     .nav {
       display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .nav a {
-      color: var(--muted);
-      font-size: 14px;
-      transition: color 0.18s ease;
+    .nav a { color: var(--muted); }
+    .nav a:hover { color: white; }
+
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { margin-top: 30px; }
+    p, li { color: var(--muted); line-height: 1.7; }
+
+    .content {
+      padding: 40px 0;
     }
 
-    .nav a:hover {
-      color: var(--text);
-    }
-
-    .page-hero {
-      padding: 54px 0 22px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      color: var(--amber);
-      background: rgba(255,181,94,0.08);
-      border: 1px solid rgba(255,181,94,0.18);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--amber);
-      box-shadow: 0 0 14px rgba(255,181,94,0.75);
-    }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: 52px;
-      line-height: 0.98;
-      letter-spacing: -1.8px;
-    }
-
-    .hero-copy {
-      max-width: 760px;
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 17px;
-    }
-
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .meta-pill {
-      padding: 10px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .page-wrap {
-      padding: 16px 0 56px;
-    }
-
-    .page-grid {
-      display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 22px;
-      align-items: start;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 98px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
-
-    .sidebar-title {
-      font-size: 13px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .sidebar-nav {
-      display: grid;
-      gap: 8px;
-    }
-
-    .sidebar-nav a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      transition: background 0.18s ease, color 0.18s ease;
-    }
-
-    .sidebar-nav a:hover {
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .content-card {
-      border-radius: 28px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .intro-callout {
-      border-radius: 20px;
-      padding: 18px 18px;
-      margin-bottom: 22px;
-      background: rgba(255,181,94,0.08);
-      border: 1px solid rgba(255,181,94,0.16);
-      color: var(--text);
-      line-height: 1.8;
-    }
-
-    .policy-section {
-      padding: 22px 0;
+    .footer {
       border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .policy-section:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    h2 {
-      margin: 0 0 12px;
-      font-size: 28px;
-      letter-spacing: -0.7px;
-    }
-
-    h3 {
-      margin: 18px 0 10px;
-      font-size: 18px;
-      letter-spacing: -0.3px;
-    }
-
-    p, li {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.85;
-    }
-
-    p {
-      margin: 0 0 14px;
-    }
-
-    ul {
-      margin: 0 0 14px;
-      padding-left: 20px;
-    }
-
-    li + li {
-      margin-top: 8px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .info-card {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-    }
-
-    .info-label {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .info-value {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--text);
-      word-break: break-word;
-    }
-
-    .site-footer {
-      padding: 24px 0 40px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      padding: 20px 0;
+      margin-top: 40px;
     }
 
     .footer-links {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .footer-links a {
       color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-copy {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 960px) {
-      .page-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
-      }
-
-      h1 {
-        font-size: 40px;
-        letter-spacing: -1.3px;
-      }
-
-      .content-card {
-        padding: 22px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .page-hero {
-        padding-top: 42px;
-      }
-
-      .hero-copy,
-      p, li {
-        font-size: 16px;
-      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand-wrap" href="/">
-        <img class="brand-logo" src="/NovaWorkout.png" alt="Nova Quiz logo">
-        <div class="brand-text">
-          <div class="brand-name">Nova Quiz</div>
-          <div class="brand-sub">Trivia challenge</div>
-        </div>
-      </a>
 
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms-of-service.html">Terms of Service</a>
-        <a href="/delete-account.html">Delete Account</a>
-      </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-wrap" href="/nova-quiz.github.io/">
+      <img class="brand-logo" src="/nova-quiz.github.io/NovaQuiz.png" alt="Nova Quiz logo">
+      <strong>Nova Quiz</strong>
+    </a>
+
+    <nav class="nav">
+      <a href="/nova-quiz.github.io/">Home</a>
+      <a href="/nova-quiz.github.io/privacy-policy.html">Privacy Policy</a>
+      <a href="/nova-quiz.github.io/terms-of-service.html">Terms of Service</a>
+      <a href="/nova-quiz.github.io/delete-account.html">Delete Account</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content container">
+  <h1>Terms of Service</h1>
+  <p>Last updated: 2026-04-03</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>
+    By using Nova Quiz And Trivia Challenge, you agree to these Terms of Service.
+    If you do not agree, please do not use the app.
+  </p>
+
+  <h2>2. Use of the App</h2>
+  <ul>
+    <li>You may use the app for personal, non-commercial use.</li>
+    <li>You agree not to misuse, exploit, or disrupt the app.</li>
+    <li>You must comply with applicable laws.</li>
+  </ul>
+
+  <h2>3. Accounts</h2>
+  <p>
+    You may use the app as a guest or sign in with Google Play. Signed-in users
+    may have access to cloud sync and purchases.
+  </p>
+
+  <h2>4. Purchases</h2>
+  <p>
+    Some features may require payment. Purchases are handled by Google Play and
+    subject to their terms and policies.
+  </p>
+
+  <h2>5. Content</h2>
+  <p>
+    All questions, designs, and app content are owned by NOVASTORE (PTY) LTD and
+    may not be copied or redistributed.
+  </p>
+
+  <h2>6. Termination</h2>
+  <p>
+    We may suspend or terminate access if you violate these terms.
+  </p>
+
+  <h2>7. Disclaimer</h2>
+  <p>
+    The app is provided "as is" without warranties of any kind.
+  </p>
+
+  <h2>8. Limitation of Liability</h2>
+  <p>
+    We are not liable for damages arising from use of the app.
+  </p>
+
+  <h2>9. Changes</h2>
+  <p>
+    We may update these terms at any time.
+  </p>
+
+  <h2>10. Contact</h2>
+  <p>
+    Email: <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="/nova-quiz.github.io/">Home</a>
+      <a href="/nova-quiz.github.io/privacy-policy.html">Privacy Policy</a>
+      <a href="/nova-quiz.github.io/terms-of-service.html">Terms of Service</a>
+      <a href="/nova-quiz.github.io/delete-account.html">Delete Account</a>
     </div>
-  </header>
+    <p style="color: var(--muted); margin-top:10px;">
+      © 2026 NOVASTORE (PTY) LTD
+    </p>
+  </div>
+</footer>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Legal terms
-        </div>
-
-        <h1>Terms of Service</h1>
-
-        <p class="hero-copy">
-          These Terms of Service govern your use of Nova Quiz And Trivia Challenge.
-          By downloading, accessing, or using the app, you agree to these terms.
-        </p>
-
-        <div class="meta-row">
-          <div class="meta-pill">Last updated: 2026-04-03</div>
-          <div class="meta-pill">Applies to Nova Quiz And Trivia Challenge</div>
-          <div class="meta-pill">Contact: support@novastore.co.za</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-wrap">
-      <div class="container page-grid">
-        <aside class="sidebar">
-          <div class="sidebar-title">On this page</div>
-          <nav class="sidebar-nav">
-            <a href="#operator">Operator</a>
-            <a href="#acceptance">Acceptance of terms</a>
-            <a href="#eligibility">Eligibility and accounts</a>
-            <a href="#guest-and-signin">Guest mode and sign-in</a>
-            <a href="#license">App license</a>
-            <a href="#content">Question content and gameplay</a>
-            <a href="#purchases">Purchases and payments</a>
-            <a href="#acceptable-use">Acceptable use</a>
-            <a href="#feedback">Feedback and suggestions</a>
-            <a href="#availability">Availability and updates</a>
-            <a href="#termination">Termination</a>
-            <a href="#disclaimers">Disclaimers</a>
-            <a href="#liability">Limitation of liability</a>
-            <a href="#law">Governing law</a>
-            <a href="#changes">Changes to these terms</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </aside>
-
-        <div class="content-card">
-          <div class="intro-callout">
-            These terms are intended to set clear rules for using the app. If
-            you do not agree with these Terms of Service, please do not use
-            Nova Quiz And Trivia Challenge.
-          </div>
-
-          <section id="operator" class="policy-section">
-            <h2>Operator</h2>
-
-            <div class="info-grid">
-              <div class="info-card">
-                <div class="info-label">Operator</div>
-                <div class="info-value">NOVASTORE (PTY) LTD</div>
-              </div>
-
-              <div class="info-card">
-                <div class="info-label">App</div>
-                <div class="info-value">Nova Quiz And Trivia Challenge</div>
-              </div>
-
-              <div class="info-card">
-                <div class="info-label">Contact</div>
-                <div class="info-value">
-                  <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="acceptance" class="policy-section">
-            <h2>Acceptance of terms</h2>
-            <p>
-              By downloading, installing, accessing, or using the app, you agree
-              to be bound by these Terms of Service and our Privacy Policy. If
-              you use the app on behalf of another person or entity, you confirm
-              that you have authority to accept these terms on their behalf.
-            </p>
-          </section>
-
-          <section id="eligibility" class="policy-section">
-            <h2>Eligibility and accounts</h2>
-            <p>
-              You must provide accurate information when creating or linking an
-              account and keep your login credentials secure. You are
-              responsible for activities that occur under your account.
-            </p>
-            <p>
-              You agree not to impersonate another person, create accounts using
-              false information, or access accounts that do not belong to you.
-            </p>
-          </section>
-
-          <section id="guest-and-signin" class="policy-section">
-            <h2>Guest mode and sign-in</h2>
-
-            <h3>Guest mode</h3>
-            <p>
-              The app may allow you to play as a guest. In guest mode, gameplay
-              data is generally stored locally on your device. You understand
-              that local data may be lost if you uninstall the app, clear app
-              storage, reset your device, or otherwise remove local files.
-            </p>
-
-            <h3>Google Play sign-in</h3>
-            <p>
-              The app may also allow sign-in through Google Play or other
-              supported platform services. When you sign in, certain account,
-              progress, and purchase-related data may be stored in Firebase or
-              related backend services so we can support cloud sync, purchase
-              validation, entitlement management, and account continuity across
-              supported devices.
-            </p>
-          </section>
-
-          <section id="license" class="policy-section">
-            <h2>App license</h2>
-            <p>
-              Subject to these terms, we grant you a limited, non-exclusive,
-              non-transferable, revocable license to use the app for personal,
-              non-commercial use on devices you own or control, unless we
-              expressly agree otherwise in writing.
-            </p>
-            <p>
-              This license does not give you ownership of the app, its code, its
-              branding, its design, or its question database.
-            </p>
-          </section>
-
-          <section id="content" class="policy-section">
-            <h2>Question content and gameplay</h2>
-            <p>
-              Nova Quiz includes quiz and trivia content across many categories,
-              including offline packs, cloud-synced updates, and team-based play
-              features. We may add, remove, reorder, revise, or replace
-              questions, answers, categories, game rules, balancing settings,
-              scoring methods, or other gameplay features at any time.
-            </p>
-            <p>
-              While we aim for quality and accuracy, trivia content may contain
-              mistakes, outdated references, ambiguous wording, or differences
-              in accepted answers. We do not guarantee that every question,
-              answer, or explanation will always be complete, accurate, or up
-              to date.
-            </p>
-          </section>
-
-          <section id="purchases" class="policy-section">
-            <h2>Purchases and payments</h2>
-            <p>
-              The app may include paid features, premium content, subscriptions,
-              one-time purchases, or other digital items. Purchases may be
-              processed through Google Play or other authorized platform
-              providers, not directly by us.
-            </p>
-            <p>
-              Prices, taxes, billing terms, refund rules, renewal terms, and
-              cancellation options may be determined by the applicable platform
-              provider and your region. You are responsible for reviewing the
-              terms presented by the platform before completing a purchase.
-            </p>
-            <p>
-              We may use account-linked cloud systems, including Firebase or
-              related services, to validate purchases, restore access, enforce
-              entitlements, and prevent fraud or abuse.
-            </p>
-          </section>
-
-          <section id="acceptable-use" class="policy-section">
-            <h2>Acceptable use</h2>
-            <p>You agree not to:</p>
-            <ul>
-              <li>Use the app for unlawful, harmful, or fraudulent purposes</li>
-              <li>Attempt to reverse engineer, copy, modify, decompile, or tamper with the app except where law clearly permits it</li>
-              <li>Bypass security, payment, ad, or entitlement systems</li>
-              <li>Exploit bugs, automation, bots, or unauthorized tools to gain unfair advantages</li>
-              <li>Interfere with servers, databases, sync systems, or service stability</li>
-              <li>Upload or submit malicious code, spam, abusive content, or deceptive reports</li>
-              <li>Infringe our intellectual property rights or those of others</li>
-              <li>Use the app in a way that could damage, disable, overburden, or impair the service</li>
-            </ul>
-          </section>
-
-          <section id="feedback" class="policy-section">
-            <h2>Feedback and suggestions</h2>
-            <p>
-              If you send us suggestions, bug reports, ideas for new categories,
-              proposed questions, feature requests, or other feedback, you grant
-              us a worldwide, non-exclusive, royalty-free license to use,
-              reproduce, modify, adapt, publish, translate, distribute, and
-              incorporate that feedback into the app or our services without
-              compensation to you.
-            </p>
-          </section>
-
-          <section id="availability" class="policy-section">
-            <h2>Availability and updates</h2>
-            <p>
-              We may update, patch, improve, suspend, restrict, or discontinue
-              any part of the app at any time, with or without notice. Features
-              such as online sync, offline downloads, cloud question updates,
-              ads, purchases, and team features may change over time.
-            </p>
-            <p>
-              We do not guarantee that the app, every category, every question
-              pack, or every online feature will always be available, error-free,
-              uninterrupted, or compatible with every device or operating system
-              version.
-            </p>
-          </section>
-
-          <section id="termination" class="policy-section">
-            <h2>Termination</h2>
-            <p>
-              We may suspend or terminate your access to the app, or certain
-              features within it, if we reasonably believe you violated these
-              terms, abused the service, engaged in fraud, interfered with
-              operations, or created risk for us, other users, or partners.
-            </p>
-            <p>
-              You may stop using the app at any time. If you want account-linked
-              data deleted, please follow the steps on our Delete Account page
-              or contact support where applicable.
-            </p>
-          </section>
-
-          <section id="disclaimers" class="policy-section">
-            <h2>Disclaimers</h2>
-            <p>
-              The app is provided on an "as is" and "as available" basis to the
-              fullest extent permitted by law. We disclaim all warranties,
-              whether express, implied, or statutory, including implied
-              warranties of merchantability, fitness for a particular purpose,
-              non-infringement, and availability.
-            </p>
-            <p>
-              We do not warrant that the app will always be secure, free of
-              bugs, free of interruptions, or that all question content will be
-              accurate, complete, or suitable for any particular use.
-            </p>
-          </section>
-
-          <section id="liability" class="policy-section">
-            <h2>Limitation of liability</h2>
-            <p>
-              To the fullest extent permitted by law, NOVASTORE (PTY) LTD and
-              its directors, employees, contractors, affiliates, and service
-              providers will not be liable for any indirect, incidental,
-              special, consequential, exemplary, or punitive damages, or for
-              any loss of profits, data, goodwill, revenue, or business
-              opportunities arising out of or related to your use of, or
-              inability to use, the app.
-            </p>
-            <p>
-              To the fullest extent permitted by law, our total liability for
-              claims arising out of or related to the app will not exceed the
-              amount you paid to use the app in the twelve months immediately
-              before the event giving rise to the claim, or if you paid nothing,
-              a nominal amount permitted by applicable law.
-            </p>
-          </section>
-
-          <section id="law" class="policy-section">
-            <h2>Governing law</h2>
-            <p>
-              These terms are governed by the laws of South Africa, without
-              regard to conflict of law principles, unless applicable law in
-              your jurisdiction requires otherwise. You agree that disputes
-              arising from or relating to these terms or the app may be handled
-              in the appropriate courts or forums permitted by applicable law.
-            </p>
-          </section>
-
-          <section id="changes" class="policy-section">
-            <h2>Changes to these terms</h2>
-            <p>
-              We may update these Terms of Service from time to time. When we
-              do, we will revise the "Last updated" date on this page. Your
-              continued use of the app after changes take effect may constitute
-              acceptance of the updated terms to the extent permitted by law.
-            </p>
-          </section>
-
-          <section id="contact" class="policy-section">
-            <h2>Contact</h2>
-            <p>
-              If you have questions about these Terms of Service, contact us at:
-            </p>
-
-            <div class="info-grid">
-              <div class="info-card">
-                <div class="info-label">Company</div>
-                <div class="info-value">NOVASTORE (PTY) LTD</div>
-              </div>
-
-              <div class="info-card">
-                <div class="info-label">App</div>
-                <div class="info-value">Nova Quiz And Trivia Challenge</div>
-              </div>
-
-              <div class="info-card">
-                <div class="info-label">Email</div>
-                <div class="info-value">
-                  <a href="mailto:support@novastore.co.za">support@novastore.co.za</a>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms-of-service.html">Terms of Service</a>
-        <a href="/delete-account.html">Delete Account</a>
-      </div>
-
-      <div class="footer-copy">
-        © 2026 NOVASTORE (PTY) LTD. All rights reserved.
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
